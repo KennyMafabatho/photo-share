@@ -19,6 +19,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+    
 </head>
 <body>
     <div id="app">
