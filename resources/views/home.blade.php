@@ -8,7 +8,7 @@
     
          </div>
          <div class ="col-9 pt-5">  
-             <div> <h1> PhotoShare </h1> </div>
+             <div> <h1>{{ $user ->username }}</h1> </div>
              <div class = "d-flex" >
                  <div class = "pr-3"><strong>100</strong> Posts</div>
                  <div class = "pr-3"><strong>10</strong> Followers</div>
