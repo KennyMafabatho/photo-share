@@ -8,15 +8,19 @@
     
          </div>
          <div class ="col-9 pt-5">  
-             <div> <h1>{{ $user ->username }}</h1> </div>
+             <div class = "d-flex justify-content-between align-items-baseline"> 
+                 <h1> {{$user->username}}</h1> 
+
+             <a href = "#">Add New Post </a> 
+             </div>
              <div class = "d-flex" >
                  <div class = "pr-3"><strong>100</strong> Posts</div>
                  <div class = "pr-3"><strong>10</strong> Followers</div>
                  <div class = "pr-3"><strong>500k</strong> Following</div>
             </div>
-            <div class = "pt-4 font-weight-bold"> PhotoShare.com </div>
-            <div> We are the best !! <strong> If you know, you know !! </strong> </div>
-            <div> <a href="#"> www.freecodecamp.org </a> </div>
+            <div class = "pt-4 font-weight-bold"> {{ $user->profile->title }}</div>
+            <div> {{ $user->profile-> description }}</strong> </div>
+            <div> <a href="#"> {{ $user->profile->url ?? 'N/A' }} </a> </div>
         </div> 
      </div>
      <div class ="row pt-5">
