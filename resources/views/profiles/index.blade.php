@@ -4,23 +4,24 @@
 <div class="container">
      <div class="row">
          <div class="col-3 p-5">
-            <img height ="80" src= "https://s3.amazonaws.com/freecodecamp/curriculum-diagram-full.jpg" class = "rounded-circle " >
+            <img height="80" src="https://s3.amazonaws.com/freecodecamp/curriculum-diagram-full.jpg" class = "rounded-circle " >
          </div>
-         <div class ="col-9 pt-5">  
-             <div class = "d-flex justify-content-between align-items-baseline"> 
+         <div class="col-9 pt-5">  
+             <div class="d-flex justify-content-between align-items-baseline"> 
                  <h1> {{$user->username}}</h1> 
              <a href = "#">Add New Post </a> 
              </div>
              <div class = "d-flex" >
-                 <div class = "pr-3"><strong>100</strong> Posts</div>
-                 <div class = "pr-3"><strong>10</strong> Followers</div>
-                 <div class = "pr-3"><strong>500k</strong> Following</div>
+                 <div class="pr-3"><strong>100</strong> Posts</div>
+                 <div class="pr-3"><strong>10</strong> Followers</div>
+                 <div class="pr-3"><strong>500k</strong> Following</div>
             </div>
             <div class = "pt-4 font-weight-bold">{{$user->profile->title}}</div>
             <div> {{$user->profile->description}}</strong> </div>
             <div> <a href="#">{{$user->profile->url ??'N/A'}} </a> </div>
         </div> 
      </div>
+
      <div class ="row pt-5">
         <div class ="col-3">
             <img src ="https://instagram.fjnb6-1.fna.fbcdn.net/v/t51.2885-15/e35/c0.12.775.775a/s240x240/117904071_586448102051174_5646477369680450633_n.jpg?_nc_ht=instagram.fjnb6-1.fna.fbcdn.net&_nc_cat=102&_nc_ohc=x7JJ5dVeg_EAX9rFO4a&oh=776aeff202f9dc47587382b60d6483c5&oe=5F684029" class = "w-100" >

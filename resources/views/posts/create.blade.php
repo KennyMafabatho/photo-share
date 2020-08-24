@@ -10,10 +10,10 @@
                 <h1> <strong>Add New Post</strong></h1>
             </div>
               <div class="form-group row">
-                 <label for="caption" class="col-md-4 col-form-label ">{{ __('Post caption') }}</label>
+                 <label for="caption" class="col-md-4 col-form-label ">Post Caption</label>
                  <input id="caption" 
                     type="text" class="form-control @error('caption') is-invalid @enderror" 
-                    name = "Caption"
+                    name = "caption"
                    value="{{ old('caption') }}"  
                     autocomplete="caption" autofocus>
                 @error('caption')
@@ -23,12 +23,10 @@
                 @enderror              
              </div> 
              <div class="row">
-                  <label for="image"class="col-md-4 col-form-label ">{{ __('Post Image') }}</label>
+                  <label for="image"class="col-md-4 col-form-label ">Post Image</label>
                   <input type = "file" class ="form-control-file" id = "image" name = "image">
-                @error('caption')
-                 <span class="invalid-feedback" role="alert">
+                @error('image')
                     <strong>{{ $message }}</strong>
-                 </span>
                 @enderror              
              </div>
              <div class="row pt-4">
