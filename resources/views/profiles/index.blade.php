@@ -12,7 +12,7 @@
              <a href ="/p/create">Add New Post </a> 
              </div>
              <div class = "d-flex" >
-                 <div class="pr-3"><strong>100</strong>Posts</div>
+                 <div class="pr-3"><strong>{{$user->posts->count()}}</strong>Posts</div>
                  <div class="pr-3"><strong>10</strong>Followers</div>
                  <div class="pr-3"><strong>500k</strong>Following</div>
             </div>
@@ -24,7 +24,7 @@
 
     <div class ="row pt-5">
          @foreach ($user->posts as $post)
-        <div class ="col-4">
+        <div class ="col-4 pb-4">
             <img src ="/storage/{{$post->image}}" class ="w-100" >
          </div>
         @endforeach  
