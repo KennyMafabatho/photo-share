@@ -9,18 +9,18 @@
 
 ## About Photo-Share
 
-Photo-Share is an image sharing platform built on the laravel framework. Allows users to share messages and pictures.
+Photo-Share is an image sharing platform built on the Laravel framework. It allows users to share messages and pictures.
 
 
 
 ## How to use
 
-Photo-Share it's easy to use. User can simply register, log in and be able to add postS with just a clicks. Users can also be able to edit profiles.
+Photo-Share it's easy to use. User can simply register, log in and add posts with just a click. Users can also edit profiles.
 
 
 ## Contributing
 
-Pull requests are welcome. For any changes, please open an issues first to discuss what you would like to change.
+Pull requests are welcome. For any changes, please open an issue first to discuss what you would like to change.
 
 ## Future Scope
 
