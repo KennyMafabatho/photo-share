@@ -1,7 +1,7 @@
-<p align="center"><img src="/img/phshare.png"  width="400"></p>
+<p align="center">
 
-
-
+![phshare](https://user-images.githubusercontent.com/68854524/92119991-cd48e400-edf8-11ea-9f97-024e648961bd.png)
+</p>
 ## About Photo-Share
 
 Photo-Share is an image sharing platform built on the Laravel framework. It allows users to share messages and pictures.
