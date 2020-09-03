@@ -1,4 +1,4 @@
-<p align="center"><img src="/img/photoshare-logo.png"  width="400"></p>
+<p align="center"><img src="/Pictures/phshare"  width="400"></p>
 
 
 
