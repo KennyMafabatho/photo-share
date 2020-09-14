@@ -15,10 +15,11 @@ use Illuminate\Support\Facades\Route;
 
  
 Auth::routes();
-Route::get('/welcome','HomeController@index');
+Route::get('/','HomeController@index');
 Route::post('/follow/{user}','FollowsController@store');
-Route::get('/','PostsController@index');
+Route::get('/home','PostsController@index');
 Route::get('/p/create', 'PostsController@create');
+Route::delete('p/{post}','PostsController@delete');
 Route::get('/p/{post}', 'PostsController@show');
 Route::post('/p', 'PostsController@store');
 Route::get('/profile', function(){
