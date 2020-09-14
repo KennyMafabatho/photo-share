@@ -2,6 +2,9 @@
 
 @section('content')
 <div class="container">
+
+@if ($posts->count())
+
     @foreach($posts as $post)
         <div class="row ">
             <div class = "col-6 offset-3">
@@ -24,6 +27,10 @@
              </div>
          </div>  
     @endforeach
+
+ @else
+ You are not following anyone, or those you are following have not posted yet.
+@endif
     <div class="row">
         <div class="col-12 d-flex justify-content-center">
             {{$posts->links()}}

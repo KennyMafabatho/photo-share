@@ -8,22 +8,33 @@
          </div>
          <div class="col-9 pt-5">  
              <div class ="d-flex justify-content-between align-items-baseline"> 
-                   <div class="d-flex align-items-center pb-3" >
-                           <div class="h4">{{$user->username}}</div> 
-
-                           <follow-button user-id="{{$user->id}}" follows="{{$follows}}"></follow-button>
+                   <div class="d-flex align-items-center pb-4" >
+                           <div class="h4">
+                                    {{$user->username}}
+                           </div> 
+                            @if (auth()->user()->id !== $user->id)
+                                <follow-button user-id="{{$user->id}}" follows="{{$follows}}"></follow-button>
+                            @endif
+                            
                     </div>
                     @can('update',$user->profile)
-                   <a href="/p/create">Add New Post</a> 
+                    <a href="/p/create" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Add New Post</a>
+                
                     @endcan
              </div>
              @can('update',$user->profile)
                    <a href="/profile/{{$user->id}}/edit">Edit Profile</a> 
                     @endcan
              <div class="d-flex" >
-                 <div class="pr-3"><strong>{{$postCount}}</strong>Posts</div>
-                 <div class="pr-3"><strong>{{$followersCount}}</strong>Followers</div>
-                 <div class="pr-3"><strong>{{$followingCount}}</strong>Following</div>
+                 <div class="pr-2">
+                        <strong class="pr-2">{{$postCount}}</strong>Posts
+                </div>
+                <div class="pr-2">
+                        <strong class="pr-2">{{$followersCount}}</strong>Followers
+                </div>
+                <div class="pr-2">
+                        <strong class="pr-2">{{$followingCount}}</strong>Following
+                </div>
             </div>
             <div class="pt-4 font-weight-bold">{{$user->profile->title}}</div>
             <div> {{$user->profile->description}}</strong> </div>
