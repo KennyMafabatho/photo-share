@@ -17,12 +17,12 @@
                             @endif
                             
                     </div>
-                    @can('update',$user->profile)
-                    <a href="/p/create" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Add New Post</a>
+                    @can('update', $user->profile)
+                    <a href="/p/create" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Add New Post</a>
                 
                     @endcan
              </div>
-             @can('update',$user->profile)
+             @can('update', $user->profile)
                    <a href="/profile/{{$user->id}}/edit">Edit Profile</a> 
                     @endcan
              <div class="d-flex" >

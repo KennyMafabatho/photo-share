@@ -12,6 +12,7 @@ class ProfilesController extends Controller
     {
         $this->middleware('auth');
     }
+
     public function index(User $user)
     {
         $follows = (auth()->user()) ? auth()->user()->following->contains($user->id) : false;
@@ -42,14 +43,14 @@ class ProfilesController extends Controller
     
     public function edit(User $user)
     {
-        $this->authorize('update',$user->profile);
+        $this->authorize('update', $user->profile);
 
         return view ('profiles.edit', compact('user'));
     }
 
     public function update(User $user)
     {
-        $this->authorize('update',$user->profile);
+        $this->authorize('update', $user->profile);
 
         $data = request()->validate([
             'title'=> 'required',

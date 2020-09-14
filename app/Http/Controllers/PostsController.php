@@ -9,25 +9,30 @@ use Intervention\Image\Facades\Image;
 
 class PostsController extends Controller
 {
-    public function __construct()
+    public function __construct() 
     {
         $this->middleware('auth');
     }
-    public function index()
+
+    public function index() 
     {
         $users= auth()->user()->following()->pluck('profiles.user_id');
         $posts = Post::whereIn('user_Id',$users)->with('user')->latest()->paginate(2);
         return view ('posts.index',compact('posts'));
     }
+
     public function create()
     {
         return view ('posts.create');
     }
-    public function delete($post_id)
+
+    public function delete($post_id, User $user)
     {
+       
+        $this->authorize('delete', $post_id);
         $posts= Post::find($post_id);
         $posts->delete();
-        return redirect (('/profile/'.auth()->user()->id) );
+        return redirect (('/profile/'.auth()->user()->id));
     }
 
     public function store()
@@ -49,6 +54,6 @@ class PostsController extends Controller
 
     public function show (\App\Post $post)
     {
-        return view ('posts.show',compact('post') );
+        return view ('posts.show',compact('post'));
     }
 }

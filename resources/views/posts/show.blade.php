@@ -28,14 +28,15 @@
                       </span>
                       {{$post->caption}}
                 </p>
-            
+                
                 @if ($post->user->id == auth()->user()->id)
                     <form action="/p/{{$post->id}}" method="POST">
                             @method('delete')
                             @csrf 
                             <button class="btn btn-primary btn-sm my-2" type="submit">Delete</button>
-                    </form>                   
+                    </form>                      
                 @endif
+                
             </div>
         </div>
     </div>  
