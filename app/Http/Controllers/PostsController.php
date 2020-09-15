@@ -26,13 +26,45 @@ class PostsController extends Controller
         return view ('posts.create');
     }
 
-    public function delete($post_id, User $user)
+    public function destroy(Post $post)
     {
-       
-        $this->authorize('delete', $post_id);
-        $posts= Post::find($post_id);
-        $posts->delete();
+        
+        $this->authorize('delete', $post);
+        $post->delete();
         return redirect (('/profile/'.auth()->user()->id));
+    }
+
+    public function edit(Post $post)
+    {
+        $this->authorize('update', $post)
+        
+        return view ('posts.edit');
+        
+    }
+    public function update(Post $post)
+    {
+        $this->authorize('update', $user->post);
+
+        $data = request()->validate([
+            'caption' => 'caption',
+            'image'=> '',
+        ]);
+      
+        if (request('image')) {
+            $imagePath = request('image')->store('profile','public');
+            $image = Image::make(public_path("storage/{$imagePath}"))->fit(1000,1000);
+            $image->save();
+
+            $imageArray = ['image'=> $imagePath];
+            
+        }
+      
+        Auth()->user()->profile->update(array_merge(
+            $data,
+            $imageArray ?? []
+        ));
+
+        return redirect("/p/{$post->id}");
     }
 
     public function store()
