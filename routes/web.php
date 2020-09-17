@@ -19,10 +19,12 @@ Route::get('/','HomeController@index');
 Route::post('/follow/{user}','FollowsController@store');
 Route::get('/home','PostsController@index');
 Route::get('/p/create', 'PostsController@create');
+Route::get('/p/{post}/edit', 'PostsController@edit');
+Route::put('/p/{post}', 'PostsController@update');
 Route::delete('p/{post}','PostsController@destroy');
 Route::get('/p/{post}', 'PostsController@show');
 Route::post('/p', 'PostsController@store');
-Route::get('/p/{post}/edit', 'PostsController@edit');
+
 Route::patch('/p/{post}', 'ProfilesController@update');
 Route::get('/profile', function(){
     return redirect('/profile/'.auth()->user()->id);

@@ -5,7 +5,7 @@
 <div class = "container">
                 <div class="row">
                 @foreach($posts as $post)
-                        <div class="col-md-4 pr-4 pb-4 " >
+                        <div class="col-sm-6 col-md-2 pr-4 pb-4 " >
                             <div class="card border-0 shadow"  >
                                     <a href ="/profile/{{$post->user->id}}" > 
                                              <img src="/storage/{{$post->image}}" class ="rounded-top w-100">

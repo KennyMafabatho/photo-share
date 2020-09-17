@@ -35,34 +35,22 @@ class PostsController extends Controller
     }
 
     public function edit(Post $post)
-    {
-        $this->authorize('update', $post)
-        
-        return view ('posts.edit');
+    {  
+        $this->authorize('update', $post);
+        return view ('posts.edit', compact('post'));
         
     }
+
     public function update(Post $post)
     {
-        $this->authorize('update', $user->post);
+        $this->authorize('update', $post);
 
         $data = request()->validate([
-            'caption' => 'caption',
-            'image'=> '',
+            'caption' => 'required',
         ]);
       
-        if (request('image')) {
-            $imagePath = request('image')->store('profile','public');
-            $image = Image::make(public_path("storage/{$imagePath}"))->fit(1000,1000);
-            $image->save();
-
-            $imageArray = ['image'=> $imagePath];
-            
-        }
-      
-        Auth()->user()->profile->update(array_merge(
-            $data,
-            $imageArray ?? []
-        ));
+            $post->update(
+            $data);
 
         return redirect("/p/{$post->id}");
     }
